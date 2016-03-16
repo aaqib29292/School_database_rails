@@ -1,0 +1,75 @@
+<div id="school-board" class="container-fluid">
+  <h1>Code Astra School</h1>
+  <div class="row">
+    <div id="klasses" class="col-md-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Classes</b>
+          <a type="button" href="#" class="pull-right" data-toggle="modal" data-target="#new_klass">
+            <%= fa_icon "plus-square" %>
+          </a>
+        </div>
+        <div id="klasses-list" class="list-group">
+            <%= render @klasses  %>
+             <!-- refers to @klasses in index action and partial _klass.html.erb by convection -->
+            <%# render (partial: 'klasses/klass', locals: {klass: @klasses})  %>
+            <!-- by configuration -->
+          </div>
+      </div>
+    </div>
+    <div id="sections" class="col-md-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Sections</b>
+
+        </div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+    </div>
+    <div id="students" class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Students</b>
+
+        </div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+    </div>
+    <div id="student-details" class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Student-details</b>
+
+        </div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<%# Class Creation Modal  %>
+<div class="modal fade" id="new_klass" tabindex="-1" role="dialog" aria-labelledby="newKlass">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a new Class</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @new_klass, remote: true, html: { id: "new-klass-form"} do |f| %>
+          <%= f.input :name %>
+          <%= f.submit "Add Class", class:"btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
