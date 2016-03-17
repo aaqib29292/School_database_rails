@@ -18,6 +18,15 @@ class StudentsController < ApplicationController
     @student = @section.students.find(params[:id])
   end
 
+  def edit
+    @student = @section.students.find(params[:id])
+  end
+
+  def update
+    @student = @section.students.find(params[:id])
+    @save_success = @student.update_attributes(student_params)
+
+  end
 private
   def fetch_klass_section
     @klass = Klass.find(params[:klass_id])
