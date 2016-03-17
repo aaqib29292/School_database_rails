@@ -31,7 +31,7 @@ def seed_students(section,house, roll_no)
   age = section.klass.name.to_i + 5
   section.students.find_or_create_by(roll_number: roll_no) do |student|
     student.house = house
-    section.name = "#{Faker::Name.first_name} #{last_name}"
+    student.name = "#{Faker::Name.first_name} #{last_name}"
     student.fathers_name = "#{Faker::Name.name} #{last_name}"
     student.gender = Student::Gender.all.sample
     student.email = Faker::Internet.email
