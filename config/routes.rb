@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'students/index'
+
   resources :klasses do
-    resources :sections
+    resources :sections do
+      resources  :students
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

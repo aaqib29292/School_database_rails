@@ -1,0 +1,7 @@
+$('#new_student').modal('hide')
+<% if @save_success %>
+  $("#students-list").append("<%= j render(@student) %>");
+
+  $("form#new-student-form")[0].reset();
+  // reset is defined on dom ele but not on jquery so [0] is added
+<% end %>

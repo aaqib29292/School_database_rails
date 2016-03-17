@@ -35,10 +35,13 @@
       <div class="panel panel-info">
         <div class="panel-heading">
           <b>Students</b>
-
+          <!-- <a type="button" href="#" class="pull-right">
+            <%= fa_icon "plus-square" %>
+          </a> -->
+          <%= link_to fa_icon("plus-square"), "#", class: "pull-right", remote:  true %>
         </div>
-        <div class="panel-body">
-          Panel content
+        <div id="students-list" class="list-group">
+
         </div>
       </div>
     </div>
