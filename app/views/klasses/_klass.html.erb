@@ -1,3 +1,8 @@
-<a href="#" class="list-group-item">
+<!-- <a href="#" class="list-group-item">
     <%= klass.name %>
-  </a>
+  </a> -->
+<%= link_to klass.name,
+            klass_sections_path(klass),
+            class: "list-group-item",
+            remote: true
+%>
