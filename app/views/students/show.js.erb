@@ -1,0 +1,2 @@
+$("#student-details").removeClass('hidden')
+$("#student-details .panel-body").html('<%= j render(partial: "students/student_details",locals: {student: @student}) %>');
