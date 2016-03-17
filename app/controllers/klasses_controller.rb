@@ -5,9 +5,6 @@ class KlassesController < ApplicationController
 
     #instantiate new object
     @new_klass = Klass.new
-
-    #section new in present at index of klass
-    @new_section = Section.new
   end
 
   def create

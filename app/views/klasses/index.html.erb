@@ -17,20 +17,21 @@
           </div>
       </div>
     </div>
-    <div id="sections" class="col-md-2">
+    <div id="sections" class="col-md-2 hidden">
       <div class="panel panel-info">
         <div class="panel-heading">
           <b>Sections</b>
-          <a type="button" href="#" class="pull-right" data-toggle="modal" data-target="#new_section">
+          <!-- <a type="button" href="#" class="pull-right">
             <%= fa_icon "plus-square" %>
-          </a>
+          </a> -->
+          <%= link_to fa_icon("plus-square"), "#", class: "pull-right", remote:  true %>
         </div>
         <div id="sections-list" class="list-group">
-           
+
         </div>
       </div>
     </div>
-    <div id="students" class="col-md-4">
+    <div id="students" class="col-md-4 hidden">
       <div class="panel panel-info">
         <div class="panel-heading">
           <b>Students</b>
@@ -41,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div id="student-details" class="col-md-4">
+    <div id="student-details" class="col-md-4 hidden">
       <div class="panel panel-info">
         <div class="panel-heading">
           <b>Student-details</b>
@@ -58,4 +59,3 @@
 
 
 <%= render partial: 'klasses/form' %>
-<%= render partial: 'sections/form' %>
