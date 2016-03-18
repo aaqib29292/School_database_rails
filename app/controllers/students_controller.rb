@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
 
   before_action :fetch_klass_section
+
   def index
     @students = @section.students.includes(:house)
   end

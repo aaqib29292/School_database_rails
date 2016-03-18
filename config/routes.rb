@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'attendance_registries/new'
+
   get 'students/index'
 
   resources :klasses do
     resources :sections do
       resources  :students
+      resources  :attendance_registries
     end
   end
 

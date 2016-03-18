@@ -1,4 +1,4 @@
-$("#student-details").removeClass('hidden')
+StudentDBUtils.show("#student-details");
 $("#student-details .panel-body").html('<%= j render(partial: "students/student_details",locals: {student: @student}) %>');
 $("#student-details .panel-heading a").attr('href', '<%= edit_klass_section_student_path(@klass, @section, @student) %>');
 $("a.student-item").removeClass("active");

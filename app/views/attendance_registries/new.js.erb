@@ -1,0 +1,7 @@
+// $("#students").addClass('hidden')
+// $("#attendance").removeClass('hidden')
+StudentDBUtils.hide("#students")
+StudentDBUtils.hide("#students-details")
+StudentDBUtils.show("#attendance")
+$("#attendance .panel-heading a#cancel-attendance").attr('href', '<%= klass_section_students_path(@klass, @section) %>')
+$("#attendance .panel-heading a#take-attendence-trigger").attr('href', '#');

@@ -1,5 +1,5 @@
 <div id="school-board" class="container-fluid">
-  <h1>Code Astra School</h1>
+  <h1>School</h1>
   <div class="row">
     <div id="klasses" class="col-md-2">
       <div class="panel panel-info">
@@ -17,6 +17,7 @@
           </div>
       </div>
     </div>
+
     <div id="sections" class="col-md-2 hidden">
       <div class="panel panel-info">
         <div class="panel-heading">
@@ -31,20 +32,35 @@
         </div>
       </div>
     </div>
+
     <div id="students" class="col-md-4 hidden">
       <div class="panel panel-info">
         <div class="panel-heading">
           <b>Students</b>
-          <!-- <a type="button" href="#" class="pull-right">
-            <%= fa_icon "plus-square" %>
-          </a> -->
-          <%= link_to fa_icon("plus-square"), "#", class: "pull-right", remote:  true %>
+          <%= link_to fa_icon("plus-square"), "#", id: "add-student-trigger", class: "pull-right", remote:  true %>
+          <span class= "pull-right">&nbsp; &nbsp;</span>
+          <%= link_to fa_icon("hand-o-up"), "#",id: "take-attendence-trigger", class: "pull-right", remote:  true %>
         </div>
         <div id="students-list" class="list-group">
 
         </div>
       </div>
     </div>
+
+    <div id="attendance" class="col-md-4 hidden">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Attendance</b>
+          <%= link_to "Submit", "#",id: "submit-attendance", class: "btn btn-sm btn-primary pull-right", remote:  true %>
+          <span class= "pull-right btn btn-sm">&nbsp; or &nbsp;</span>
+          <%= link_to "Cancel", "#", id: "cancel-attendance", class: "btn btn-sm btn-default pull-right", remote:  true %>
+        </div>
+        <div id="attentants-list" class="list-group">
+
+        </div>
+      </div>
+    </div>
+
     <div id="student-details" class="col-md-4 hidden">
       <div class="panel panel-info">
         <div class="panel-heading">
