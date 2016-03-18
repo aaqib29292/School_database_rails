@@ -1,7 +1,7 @@
 class KlassesController < ApplicationController
 
   def index
-    @klasses = Klass.all
+    @klasses = Klass.all.includes(students: [:house])
 
     #instantiate new object
     @new_klass = Klass.new

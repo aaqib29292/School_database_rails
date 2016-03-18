@@ -4,7 +4,7 @@ class SectionsController < ApplicationController
 
   def index
     # @sections = @klass.sections.all
-    @sections = @klass.sections
+    @sections = @klass.sections.includes(students: [:house])
     # is same as abv
   end
 
