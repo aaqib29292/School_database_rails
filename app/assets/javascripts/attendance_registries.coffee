@@ -6,11 +6,11 @@
       $(@).toggleClass('absent')
       false
   submit: ->
-    absentees_ids = []
+    absent_ids = []
     $.each($('.attendant-item.absent'), (index, ele) ->
-      absentees_ids.push(ele.dataset.studentId))
-    console.log absentees_ids
-    $("#attendance_registry_absentee_ids").val(absentees_ids.join(','))
+      absent_ids.push(ele.dataset.studentId))
+    console.log absent_ids
+    $("#attendance_registry_absent_student_ids").val(absent_ids.join(','))
     $("#attendance_registry_form input.submit").click()
 
 $ ->

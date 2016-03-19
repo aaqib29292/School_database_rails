@@ -10,9 +10,11 @@ class AttendanceRegistriesController < ApplicationController
   end
 
   def create
-    @attendance_registry = @section.attendance_registries.new
+    @attendance_registry = @section.attendance_registries.find_by(date: Date.today)
+    # to check if attendance is taken once in a day r not.
+    @attendance_registry = @section.attendance_registries.new unless @attendance_registry
     @attendance_registry.date = Date.today
-    @attendance_registry.absentee_ids = params[:attendance_registry][:absentee_ids].split(",").collect(&:to_i)
+    @attendance_registry.absent_student_ids = params[:attendance_registry][:absent_student_ids].split(",").collect(&:to_i)
     @attendance_registry.save!
   end
 

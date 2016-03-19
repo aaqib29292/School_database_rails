@@ -14,12 +14,12 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'annotate'
+gem 'thin'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
-
 end
 
 
