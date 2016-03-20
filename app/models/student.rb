@@ -37,4 +37,6 @@ class Student < ActiveRecord::Base
 
   belongs_to :section
   belongs_to :house
+
+  has_one :exam
 end
