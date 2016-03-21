@@ -24,7 +24,7 @@
     <% [:english, :hindi, :mathematics, :science, :social].each do |property| %>
       <tr>
         <td>
-          <%= property.to_s.gsub("_", " ").capitalize %>
+        <%= property.to_s.gsub("_", " ").capitalize %>
         </td>
         <td>
           <%= exam.send(property) %>
@@ -33,10 +33,10 @@
           <%= exam.high(property) %>
         </td>
         <td>
-          ---
+          <%= exam.avg(property) %>
         </td>
         <td>
-          ---
+          <%= exam.percentile(property) %>
         </td>
       </tr>
     <% end %>
