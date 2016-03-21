@@ -15,6 +15,7 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'annotate'
 gem 'thin'
+gem 'spreadsheet'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -27,4 +28,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'faker'
+  gem 'meta_request'
 end
