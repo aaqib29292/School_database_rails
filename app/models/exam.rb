@@ -16,7 +16,7 @@
 class Exam < ActiveRecord::Base
   belongs_to :student
 
-  attr_accessor :file
+  attr_accessor :filels
 
   def total
     self.english + self.hindi + self.mathematics + self.science + self.social
@@ -47,6 +47,20 @@ class Exam < ActiveRecord::Base
     n = arr.length
 
     percentile = ((x.to_f/(n-1))*100).round(2)
+
+  end
+
+  def rank(subject_name)
+    score = self.send(subject_name)
+    students = self.student.section.students
+
+    below_count = students.collect do |st|
+      st.exam.send(subject_name)
+    end.count do |sc|
+      sc <= score
+    end
+
+    return students.count - below_count + 1
 
   end
 end
