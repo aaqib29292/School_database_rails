@@ -5,6 +5,13 @@ class KlassesController < ApplicationController
 
     #instantiate new object
     @new_klass = Klass.new
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @klasses.to_xml }
+      format.json { render :xml => @klasses.to_json }
+
+    end
   end
 
   def create
