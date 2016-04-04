@@ -8,9 +8,7 @@ class KlassesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml { render :xml => @klasses.to_xml }
-      format.json { render :xml => @klasses.to_json }
-
+      format.json { render :json => @klasses }
     end
   end
 

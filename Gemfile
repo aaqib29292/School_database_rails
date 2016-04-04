@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'annotate'
 gem 'thin'
 gem 'spreadsheet'
+gem 'active_model_serializers'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
