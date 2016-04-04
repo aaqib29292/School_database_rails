@@ -5,11 +5,6 @@ class KlassesController < ApplicationController
 
     #instantiate new object
     @new_klass = Klass.new
-
-    respond_to do |format|
-      format.html
-      format.json { render :json => @klasses }
-    end
   end
 
   def create
