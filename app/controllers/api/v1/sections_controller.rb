@@ -1,0 +1,57 @@
+module Api
+  module V1
+    class SectionsController < ApplicationController
+
+      before_action :fetch_klass
+
+      before_action :fetch_section, only: [:show, :update, :destroy]
+
+      def index
+        @sections = @klass.sections
+      end
+
+      def show
+        @section = @klass.sections.find(params[:id])
+      end
+
+      def create
+        @section = @klass.sections.new
+        @section.name = params[:name]
+        if @section.save
+          head :created, location: api_v1_klass_sections_url(@klass)
+        else
+          head :bad_request
+        end
+      end
+
+      def update
+        @section = @klass.sections.find(params[:id])
+        @section.name = params[:name]
+        if @section.save
+          head :ok, location: api_v1_klass_section_url(@klass, @section)
+        else
+          head :bad_request
+        end
+      end
+
+      def destroy
+        @section = @klass.sections.find(params[:id])
+        if params[:name] == @section.name
+          @section.destroy
+          head :ok
+        else
+          head :bad_request
+        end
+      end
+
+    private
+      def fetch_klass
+        @klass = Klass.find(params[:klass_id])
+      end
+
+      def fetch_section
+        @section = @klass.sections.find(params[:id])
+      end
+    end
+  end
+end
