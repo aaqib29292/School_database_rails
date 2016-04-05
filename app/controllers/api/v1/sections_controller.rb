@@ -11,7 +11,6 @@ module Api
       end
 
       def show
-        @section = @klass.sections.find(params[:id])
       end
 
       def create
@@ -25,7 +24,6 @@ module Api
       end
 
       def update
-        @section = @klass.sections.find(params[:id])
         @section.name = params[:name]
         if @section.save
           head :ok, location: api_v1_klass_section_url(@klass, @section)
@@ -35,7 +33,6 @@ module Api
       end
 
       def destroy
-        @section = @klass.sections.find(params[:id])
         if params[:name] == @section.name
           @section.destroy
           head :ok
