@@ -33,7 +33,7 @@ def seed_students(section,house, roll_no)
     student.house = house
     student.name = "#{Faker::Name.first_name} #{last_name}"
     student.fathers_name = "#{Faker::Name.name} #{last_name}"
-    student.gender = Student::Gender.all.sample
+    student.gender = Student::Gender.all.sample.code
     student.email = Faker::Internet.email
     student.dob = Faker::Date.between((age +1).days.ago, (age - 1).years.ago)
     student.phone = Faker::PhoneNumber.cell_phone

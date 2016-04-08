@@ -2,7 +2,7 @@
             id: dom_id(klass),
             class: "list-group-item klass-item",
             remote: true) do
-              raw(klass.name) +
-              house_counts_tag(klass.houses_count)
+              raw(klass.name +
+              house_counts_tag(klass.houses_count))
             end
 %>
