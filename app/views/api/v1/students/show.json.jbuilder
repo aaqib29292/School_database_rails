@@ -2,6 +2,8 @@
 
 
 json.student do
+    json.klass_id @student.section.klass_id
+    json.section_id @student.section_id
     json.id @student.id
     json.name @student.name
     json.fathers_name @student.fathers_name

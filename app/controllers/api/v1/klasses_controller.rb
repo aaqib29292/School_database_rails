@@ -14,7 +14,7 @@ module Api
         @klass = Klass.new
         @klass.name = params[:name]
         if @klass.save
-          head :created, location: api_klass_url(@klass)
+          head :created, location: api_v1_klass_url(@klass)
         else
           head :bad_request
         end
@@ -23,7 +23,7 @@ module Api
       def update
         @klass.name = params[:name]
         if @klass.save
-          head :ok, location: api_klass_url(@klass)
+          head :ok, location: api_v1_klass_url(@klass)
         else
           head :bad_request
         end

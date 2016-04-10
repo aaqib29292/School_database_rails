@@ -17,6 +17,7 @@ gem 'annotate'
 gem 'thin'
 gem 'spreadsheet'
 gem 'active_model_serializers'
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
