@@ -26,7 +26,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
   gem 'faker'
   gem 'meta_request'
