@@ -72,6 +72,9 @@ module Api
       #   end
       # end
 
+
+
+
       def update
         @student.name = params[:name] || @student.name
         @student.roll_number = params[:roll_number] || @student.roll_number

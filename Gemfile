@@ -25,6 +25,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'dotenv-rails'
 end
+
 group :development do
   gem 'web-console'
   gem 'spring'
