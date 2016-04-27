@@ -35,6 +35,6 @@ private
   end
 
   def student_params
-    params.require(:student).permit(:name, :fathers_name, :gender, :email, :address, :phone, :dob, :house_id)
+    params.require(:student).permit(:roll_number, :name, :fathers_name, :gender, :email, :address, :phone, :dob, :house_id)
   end
 end

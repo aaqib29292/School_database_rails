@@ -45,13 +45,13 @@ module Api
       #   end
       # end
 
-      def update
-        if @student.update_attributes(student_params)
-          head :ok, location: api_v1_klass_section_url(@klass, @section)
-        else
-          head :bad_request
-        end
-      end
+      # def update
+      #   if @student.update_attributes(student_params)
+      #     head :ok, location: api_v1_klass_section_student_url(@klass, @section,@student)
+      #   else
+      #     head :bad_request
+      #   end
+      # end
 
       # def update
       #   @student.roll_number = params[:roll_number]
@@ -71,6 +71,24 @@ module Api
       #     head :bad_request
       #   end
       # end
+
+      def update
+        @student.name = params[:name] || @student.name
+        @student.roll_number = params[:roll_number] || @student.roll_number
+        @student.fathers_name = params[:fathers_name] || @student.fathers_name
+        @student.gender = params[:gender] || @student.gender
+        @student.email = params[:email] || @student.email
+        @student.dob = params[:dob] || @student.dob
+        @student.phone = params[:phone] || @student.phone
+        @student.address = params[:address] || @student.address
+        @student.house_id = params[:house_id] || @student.house_id
+        @student.section_id = params[:section_id] || @student.section_id
+        if @student.save
+          head :ok, location: api_v1_klass_section_student_url(@klass, @section, @student)
+        else
+          head :bad_request
+        end
+      end
 
       def destroy
         if params[:name] == @student.name
@@ -92,7 +110,7 @@ module Api
       end
 
       def student_params
-        params.require(:student).permit(:name, :fathers_name, :gender, :email, :address, :phone, :dob, :house_id)
+        params.require(:student).permit(:name, :roll_number, :fathers_name, :gender, :email, :address, :phone, :dob, :house_id)
       end
     end
   end

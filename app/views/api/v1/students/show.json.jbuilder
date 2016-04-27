@@ -12,6 +12,6 @@ json.student do
     json.address @student.address
     json.phone @student.phone
     json.dob @student.dob
-    json.houseName @student.house.name
+    json.house_name @student.house.name
     json.roll_number @student.roll_number
 end

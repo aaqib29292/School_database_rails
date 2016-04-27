@@ -5,7 +5,7 @@
     protect_from_forgery with: :exception
     skip_before_action :verify_authenticity_token, if: :api_request?
 
-    #before_action :authorize_access!
+    before_action :authorize_access!
 
   protected
     def api_request?
