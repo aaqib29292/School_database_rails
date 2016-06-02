@@ -1,6 +1,6 @@
 <%= link_to(klass_section_students_path(@klass, section),
             class: "list-group-item section-item",
-            id: dom_id(section),
+            id: dom_id(section), data: {toggle: "tooltip", placement: "right" }, title: "click for Students list!",
             remote: true) do
               raw(section.name) +
               house_counts_tag(section.houses_count)

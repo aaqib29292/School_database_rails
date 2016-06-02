@@ -1,6 +1,6 @@
 <%= link_to(klass_section_student_path(@klass, @section, student),
             class: "list-group-item student-item",
-            id: dom_id(student),
+            id: dom_id(student), data: {toggle: "tooltip", placement: "right" }, title: "click for Student details!",
             remote: true) do
             content_tag(:span, raw("&nbsp"), class: "pull-right label label-#{student_house_label_class(student)}") +
             content_tag(:b, student.roll_number) + " " + student.name
